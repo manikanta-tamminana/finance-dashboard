@@ -17,6 +17,16 @@ This is a full-stack finance dashboard application that allows users to manage i
 * Add, edit, delete financial records
 * Dashboard with income/expense analytics
 * User management (Admin only)
+### Role Permissions
+
+- Viewer → Can view dashboard only  
+- Analyst → Can view dashboard and records  
+- Admin → Full access (manage users and records)
+## API Highlights
+
+- /auth/login → user authentication  
+- /records → CRUD operations for financial data  
+- /dashboard → aggregated financial insights  
 
 ##  Setup Instructions
 
@@ -26,14 +36,14 @@ git clone <your-repo-link>
 
 ### 2. Backend Setup
 
-cd app/backend
+cd backend
 pip install -r requirements.txt
 uvicorn server:app --reload
 
 ### 3. Frontend Setup
 
-cd app/frontend
-npm install
+cd frontend
+npm install --legacy-peer-deps
 npm start
 
 ### 4. Access Application
