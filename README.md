@@ -39,13 +39,13 @@ git clone <your-repo-link>
 cd backend
 pip install -r requirements.txt
 uvicorn server:app --reload
-
+```md
 ### 3. Frontend Setup
-
+```bash
 cd frontend
 npm install --legacy-peer-deps
 npm start
-
+```md
 ### 4. Access Application
 
 Open: http://localhost:3000
