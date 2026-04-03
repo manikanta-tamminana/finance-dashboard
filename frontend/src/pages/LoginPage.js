@@ -1,30 +1,35 @@
-import { useState } from 'react';
-import { useAuth } from '../contexts/AuthContext';
-import { formatApiError } from '../lib/api';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { Label } from '../components/ui/label';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../components/ui/card';
-import { Eye, EyeOff, ArrowRight } from 'lucide-react';
-
+import { useState } from "react";
+import { useAuth } from "../contexts/AuthContext";
+import { formatApiError } from "../lib/api";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "../components/ui/card";
+import { Eye, EyeOff, ArrowRight } from "lucide-react";
 
 export default function LoginPage() {
   const { login, register } = useAuth();
   const [isRegister, setIsRegister] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [form, setForm] = useState({ name: '', email: '', password: '' });
+  const [form, setForm] = useState({ name: "", email: "", password: "" });
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    setError('');
+    setError("");
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError('');
+    setError("");
     try {
       if (isRegister) {
         await register(form.name, form.email, form.password);
@@ -41,10 +46,7 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-screen" data-testid="login-page">
       {/* Left: Hero Image */}
-      <div
-        className="hidden lg:flex lg:w-1/2 login-hero relative"
-        style={{ backgroundImage: `url(${HERO_IMAGE})` }}
-      >
+      <div className="hidden lg:flex lg:w-1/2 bg-stone-200 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/30" />
         <div className="relative z-10 flex flex-col justify-end p-12">
           <h2 className="text-3xl font-heading font-light text-white tracking-tight mb-2">
@@ -53,7 +55,8 @@ export default function LoginPage() {
             <span className="font-semibold">simplified.</span>
           </h2>
           <p className="text-white/70 text-sm max-w-sm">
-            Track income, expenses, and trends with role-based access and real-time dashboards.
+            Track income, expenses, and trends with role-based access and
+            real-time dashboards.
           </p>
         </div>
       </div>
@@ -64,7 +67,9 @@ export default function LoginPage() {
           {/* Mobile logo */}
           <div className="flex items-center gap-2.5 mb-10 lg:mb-12">
             <div className="w-8 h-8 rounded-sm bg-moss flex items-center justify-center">
-              <span className="text-white text-sm font-bold font-heading">F</span>
+              <span className="text-white text-sm font-bold font-heading">
+                F
+              </span>
             </div>
             <span className="font-heading font-semibold text-stone-800 text-xl tracking-tight">
               Fiscal
@@ -74,19 +79,22 @@ export default function LoginPage() {
           <Card className="border-stone-200 shadow-none bg-white rounded-sm">
             <CardHeader className="space-y-1 pb-4">
               <CardTitle className="text-2xl font-heading font-semibold text-stone-800 tracking-tight">
-                {isRegister ? 'Create account' : 'Welcome back'}
+                {isRegister ? "Create account" : "Welcome back"}
               </CardTitle>
               <CardDescription className="text-stone-500 text-sm">
                 {isRegister
-                  ? 'Enter your details to get started'
-                  : 'Sign in to your finance dashboard'}
+                  ? "Enter your details to get started"
+                  : "Sign in to your finance dashboard"}
               </CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
                 {isRegister && (
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-xs font-semibold tracking-wide uppercase text-stone-500">
+                    <Label
+                      htmlFor="name"
+                      className="text-xs font-semibold tracking-wide uppercase text-stone-500"
+                    >
                       Name
                     </Label>
                     <Input
@@ -103,7 +111,10 @@ export default function LoginPage() {
                 )}
 
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-xs font-semibold tracking-wide uppercase text-stone-500">
+                  <Label
+                    htmlFor="email"
+                    className="text-xs font-semibold tracking-wide uppercase text-stone-500"
+                  >
                     Email
                   </Label>
                   <Input
@@ -120,14 +131,17 @@ export default function LoginPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="password" className="text-xs font-semibold tracking-wide uppercase text-stone-500">
+                  <Label
+                    htmlFor="password"
+                    className="text-xs font-semibold tracking-wide uppercase text-stone-500"
+                  >
                     Password
                   </Label>
                   <div className="relative">
                     <Input
                       id="password"
                       name="password"
-                      type={showPassword ? 'text' : 'password'}
+                      type={showPassword ? "text" : "password"}
                       value={form.password}
                       onChange={handleChange}
                       placeholder="Min 6 characters"
@@ -148,7 +162,10 @@ export default function LoginPage() {
                 </div>
 
                 {error && (
-                  <div className="text-sm text-terracotta bg-terracotta/5 border border-terracotta/20 rounded-sm px-3 py-2" data-testid="auth-error">
+                  <div
+                    className="text-sm text-terracotta bg-terracotta/5 border border-terracotta/20 rounded-sm px-3 py-2"
+                    data-testid="auth-error"
+                  >
                     {error}
                   </div>
                 )}
@@ -163,7 +180,7 @@ export default function LoginPage() {
                     <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                   ) : (
                     <>
-                      {isRegister ? 'Create account' : 'Sign in'}
+                      {isRegister ? "Create account" : "Sign in"}
                       <ArrowRight size={16} className="ml-2" />
                     </>
                   )}
@@ -175,19 +192,23 @@ export default function LoginPage() {
                   type="button"
                   onClick={() => {
                     setIsRegister(!isRegister);
-                    setError('');
+                    setError("");
                   }}
                   className="text-sm text-stone-500 hover:text-moss transition-colors"
                   data-testid="toggle-auth-mode-btn"
                 >
-                  {isRegister ? 'Already have an account? Sign in' : "Don't have an account? Create one"}
+                  {isRegister
+                    ? "Already have an account? Sign in"
+                    : "Don't have an account? Create one"}
                 </button>
               </div>
 
               {/* Demo credentials hint */}
               {!isRegister && (
                 <div className="mt-4 p-3 bg-stone-50 rounded-sm border border-stone-200">
-                  <p className="text-xs text-stone-500 font-medium mb-1.5">Demo Credentials</p>
+                  <p className="text-xs text-stone-500 font-medium mb-1.5">
+                    Demo Credentials
+                  </p>
                   <div className="space-y-1 text-xs text-stone-400 font-mono">
                     <p>Admin: admin@example.com / admin123</p>
                     <p>Analyst: analyst@example.com / analyst123</p>
