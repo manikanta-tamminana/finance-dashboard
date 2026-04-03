@@ -1,16 +1,16 @@
 # Finance Dashboard System
 
-## 🚀 Project Overview
+##  Project Overview
 
 This is a full-stack finance dashboard application that allows users to manage income and expenses, view analytics, and handle user roles.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * Frontend: React + Tailwind CSS
 * Backend: FastAPI (Python)
 * Database: MongoDB
 
-## ✨ Features
+##  Features
 
 * User authentication (JWT-based)
 * Role-based access (Admin, Analyst, Viewer)
@@ -18,7 +18,7 @@ This is a full-stack finance dashboard application that allows users to manage i
 * Dashboard with income/expense analytics
 * User management (Admin only)
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
 ### 1. Clone Repository
 
@@ -40,13 +40,13 @@ npm start
 
 Open: http://localhost:3000
 
-## 🔑 Demo Credentials
+##  Demo Credentials
 
 Admin: [admin@example.com](mailto:admin@example.com) / admin123
 Analyst: [analyst@example.com](mailto:analyst@example.com) / analyst123
 Viewer: [viewer@example.com](mailto:viewer@example.com) / viewer123
 
-## 🧪 Testing
+##  Testing
 
 The application was manually tested for:
 
@@ -54,6 +54,6 @@ The application was manually tested for:
 * CRUD operations
 * Dashboard functionality
 
-## 📌 Notes
+##  Notes
 
 This project is a prototype and not production-ready.
