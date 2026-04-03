@@ -35,7 +35,7 @@ This is a full-stack finance dashboard application that allows users to manage i
 git clone <your-repo-link>
 
 ### 2. Backend Setup
-
+```bash
 cd backend
 pip install -r requirements.txt
 uvicorn server:app --reload
