@@ -1,10 +1,6 @@
 import axios from 'axios';
 
-const API_BASE = process.env.REACT_APP_BACKEND_URL || 'https://fiscal-control-sys.preview.emergentagent.com';
-
-// Debug logging to see what URL is being used
-console.log('API_BASE URL:', API_BASE);
-console.log('Environment:', process.env.REACT_APP_BACKEND_URL);
+const API_BASE = process.env.REACT_APP_BACKEND_URL;
 
 const api = axios.create({
   baseURL: `${API_BASE}/api`,

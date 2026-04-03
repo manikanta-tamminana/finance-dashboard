@@ -309,7 +309,7 @@ async def refresh_token(request: Request, response: Response):
 
 # ─── Financial Records Routes ───────────────────────────────
 
-@records_router.get("/")
+@records_router.get("")
 async def list_records(
     page: int = Query(1, ge=1),
     limit: int = Query(20, ge=1, le=100),
@@ -363,7 +363,7 @@ async def list_records(
         "total_pages": math.ceil(total / limit) if total > 0 else 1,
     }
 
-@records_router.get("/categories")
+@records_router.get("/categories-list")
 async def get_categories(user: dict = Depends(get_current_user)):
     categories = await db.financial_records.distinct("category", {"is_deleted": {"$ne": True}})
     return {"categories": sorted(categories)}
@@ -523,7 +523,7 @@ async def get_recent_transactions(user: dict = Depends(get_current_user)):
 
 # ─── User Management Routes (Admin) ────────────────────────
 
-@users_router.get("/")
+@users_router.get("")
 async def list_users(user: dict = Depends(require_roles("admin"))):
     users = await db.users.find({}, {"password_hash": 0}).to_list(1000)
     return {"users": [serialize_user(u) for u in users]}
