@@ -1,69 +1,84 @@
-# Finance Dashboard System
+# 💰 Finance Dashboard
 
-##  Project Overview
+A full-stack finance dashboard built with **FastAPI, MongoDB, and React**.  
+It supports authentication, role-based access control (RBAC), and financial data management.
 
-This is a full-stack finance dashboard application that allows users to manage income and expenses, view analytics, and handle user roles.
+---
 
-##  Tech Stack
+## 🚀 Features
 
-* Frontend: React + Tailwind CSS
-* Backend: FastAPI (Python)
-* Database: MongoDB
+- 🔐 JWT Authentication (Login/Register)
+- 👥 Role-Based Access Control (Admin, Analyst, Viewer)
+- 📊 Dashboard with income, expenses, and balance
+- 📁 Financial records (CRUD operations)
+- 👤 User management (Admin only)
 
-##  Features
+---
 
-* User authentication (JWT-based)
-* Role-based access (Admin, Analyst, Viewer)
-* Add, edit, delete financial records
-* Dashboard with income/expense analytics
-* User management (Admin only)
-### Role Permissions
+## 🛠️ Tech Stack
 
-- Viewer → Can view dashboard only  
-- Analyst → Can view dashboard and records  
-- Admin → Full access (manage users and records)
-## API Highlights
+- **Backend:** FastAPI, MongoDB
+- **Frontend:** React, Tailwind CSS
+- **Auth:** JWT (httpOnly cookies)
 
-- /auth/login → user authentication  
-- /records → CRUD operations for financial data  
-- /dashboard → aggregated financial insights  
+---
 
-##  Setup Instructions
+## ⚙️ Setup Instructions
 
 ### 1. Clone Repository
-
+```bash
 git clone <your-repo-link>
+cd finance-dashboard
+```
+
+---
 
 ### 2. Backend Setup
 ```bash
 cd backend
 pip install -r requirements.txt
 uvicorn server:app --reload
-```md
+```
+
+---
+
 ### 3. Frontend Setup
 ```bash
 cd frontend
 npm install --legacy-peer-deps
 npm start
-```md
+```
+
+---
+
 ### 4. Access Application
 
-Open: http://localhost:3000
+Open in browser:
 
-##  Demo Credentials
+http://localhost:3000
 
-Admin: [admin@example.com](mailto:admin@example.com) / admin123
-Analyst: [analyst@example.com](mailto:analyst@example.com) / analyst123
-Viewer: [viewer@example.com](mailto:viewer@example.com) / viewer123
+---
 
-##  Testing
+## 🔑 Demo Credentials
+
+- **Admin:** admin@example.com / admin123  
+- **Analyst:** analyst@example.com / analyst123  
+- **Viewer:** viewer@example.com / viewer123  
+
+---
+
+## 🧪 Testing
 
 The application was manually tested for:
 
-* Authentication
-* CRUD operations
-* Dashboard functionality
+- Authentication  
+- CRUD operations  
+- Dashboard functionality  
 
-##  Notes
+---
 
-This project is a prototype and not production-ready.
+## 📝 Notes
+
+- This is a prototype project  
+- Not production-ready  
+- Built for assignment/demo purposes  
