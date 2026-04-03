@@ -7,7 +7,6 @@ import { Label } from '../components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../components/ui/card';
 import { Eye, EyeOff, ArrowRight } from 'lucide-react';
 
-const HERO_IMAGE = 'https://static.prod-images.emergentagent.com/jobs/5b6840bb-1870-435d-9e66-a5d8a6303d8c/images/c08b59b1e3fc6bdb06f89ec5487c3b7b1826dd77b0e159d797cf701a6eb16e44.png';
 
 export default function LoginPage() {
   const { login, register } = useAuth();

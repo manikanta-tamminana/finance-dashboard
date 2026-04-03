@@ -692,8 +692,8 @@ async def startup():
         logger.info(f"Seeded {len(SEED_RECORDS)} financial records")
     
     # Write test credentials
-    os.makedirs("/app/memory", exist_ok=True)
-    with open("/app/memory/test_credentials.md", "w") as f:
+    os.makedirs("memory", exist_ok=True)
+    with open("memory/test_credentials.md", "w") as f:
         f.write("# Test Credentials\n\n")
         f.write("## Users\n\n")
         f.write("| Role | Email | Password |\n")
