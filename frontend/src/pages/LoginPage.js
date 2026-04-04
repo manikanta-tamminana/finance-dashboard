@@ -12,7 +12,8 @@ import {
   CardDescription,
 } from "../components/ui/card";
 import { Eye, EyeOff, ArrowRight } from "lucide-react";
-
+const HERO_IMAGE =
+  "https://static.prod-images.emergentagent.com/jobs/5b6840bb-1870-435d-9e66-a5d8a6303d8c/images/c08b59b1e3fc6bdb06f89ec5487c3b7b1826dd77b0e159d797cf701a6eb16e44.png";
 export default function LoginPage() {
   const { login, register } = useAuth();
   const [isRegister, setIsRegister] = useState(false);
@@ -46,7 +47,10 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-screen" data-testid="login-page">
       {/* Left: Hero Image */}
-      <div className="hidden lg:flex lg:w-1/2 bg-stone-200 relative">
+      <div
+        className="hidden lg:flex lg:w-1/2 relative bg-cover bg-center"
+        style={{ backgroundImage: `url(${HERO_IMAGE})` }}
+      >
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/30" />
         <div className="relative z-10 flex flex-col justify-end p-12">
           <h2 className="text-3xl font-heading font-light text-white tracking-tight mb-2">
