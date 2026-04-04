@@ -50,6 +50,26 @@ npm start
 ```
 
 ---
+## 🌍 Environment Variables
+
+Create `.env` files in both backend and frontend:
+
+### Backend `.env`
+```
+MONGO_URL=your_mongodb_url
+DB_NAME=finance_db
+JWT_SECRET=your_secret
+FRONTEND_URL=http://localhost:3000
+ADMIN_EMAIL=admin@example.com
+ADMIN_PASSWORD=admin123
+```
+
+### Frontend `.env`
+```
+REACT_APP_BACKEND_URL=http://localhost:8000
+```
+
+---
 
 ### 4. Access Application
 
