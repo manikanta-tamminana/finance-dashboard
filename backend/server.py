@@ -30,8 +30,13 @@ client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
 # ─── App ────────────────────────────────────────────────────
+from fastapi import FastAPI
+
 app = FastAPI(title="Finance Dashboard API")
 
+@app.get("/")
+def root():
+    return {"message": "Finance Dashboard API is running"}
 # ─── Logging ────────────────────────────────────────────────
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
