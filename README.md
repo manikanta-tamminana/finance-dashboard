@@ -96,6 +96,13 @@ The application was manually tested for:
 - Dashboard functionality  
 
 ---
+## 🔍 API Testing
+
+All backend APIs were verified using browser DevTools (Network tab):
+
+- Login → 200 OK
+- Dashboard APIs → 200 OK
+- Role-based restrictions validated
 
 ## 📝 Notes
 
